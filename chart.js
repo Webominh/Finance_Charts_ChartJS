@@ -1,0 +1,1 @@
+fetch('data/prices.csv').then(r=>r.text()).then(t=>{const rows=t.trim().split(/\n/).slice(1).map(r=>r.split(','));const labels=rows.map(r=>r[0]);const data=rows.map(r=>+r[1]);new Chart(document.getElementById('c'),{type:'line',data:{labels,datasets:[{label:'Price',data}]},options:{plugins:{legend:{display:false}}}});});
